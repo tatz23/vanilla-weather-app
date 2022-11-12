@@ -1,24 +1,36 @@
 .weather-app {
   background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
-  padding: 10px;
+  padding: 20px;
   border-radius: 15px;
   margin: 60px auto;
   font-family: "Montserrat", sans-serif;
   max-width: 600px;
 }
 
+h1 {
+  color: #052f42;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 28px;
+}
+
 .weather-description {
   list-style: none;
   text-align: left;
   padding: 0px;
-
+}
+.temperature {
+  text-align: right;
+  margin-right: 20px;
 }
 .hr-bar {
   border: 2px solid #08a9f3;
   border-radius: 5px;
+  margin: 5px;
 }
 div .data-weather {
   text-align: center;
+  font-size: 14px;
 }
 .other-days {
   color: #052f42;
