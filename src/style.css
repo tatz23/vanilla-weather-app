@@ -9,7 +9,7 @@
 
 h1 {
   color: #052f42;
-  font-size: 24px;
+  font-size: 30px;
   font-weight: bold;
   line-height: 28px;
 font-family: 'Mali', cursive;
@@ -23,9 +23,14 @@ font-family: 'Mali', cursive;
 }
 .temperature {
   text-align: right;
-  margin-right: 20px;
   font-family: 'Poppins', sans-serif;
+  font-size: 40px;
 }
+
+.weather-temperature img {
+    margin-right: 10px;
+}
+
 .hr-bar {
   border: 2px solid #08a9f3;
   border-radius: 5px;
