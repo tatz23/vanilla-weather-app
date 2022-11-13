@@ -17,9 +17,11 @@
         <div class="weather-app">
             <div class="row">
                 <div class="col-9">
-            <div class="form-outline">
-                <input type="search" id="city-input" class="form-control" placeholder="🔎 Search city here..." />
-            </div>
+            <div class="search-bar">
+              <form id="city-form">
+                <input  class="form-control" id="city-input" type="text" placeholder="🔎 Search city here..." autofocus />
+              </form>
+          </div>
             </div>
             <div class="col-1">
               <button class="current-location" id="current-location">
@@ -39,21 +41,21 @@
             <hr />
             <div class ="row">
                 <div class="col-6">
-                <h1>Lisbon</h1>
+                <h1 id="city">Lisbon</h1>
                 </div>
                 <div class="col-6">
             <div class ="d-flex weather-temperature">
-            <h2 class="temperature"> <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"> <span id="current-temperature">20</span><span class="units"></span>ºC</h2>
+            <h2 class="temperature"> <img id="icon" src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"> <span id="current-temperature">20</span><span class="units"></span>ºC</h2>
             </div>
                 </div>
             </div>
     <div class="row">
         <div class="col-6">
-            <ul class="weather-description">
+            <ul>
                 <li id="date">
                     Saturday, 15:13
                 </li>
-                <li id="weather-detail">
+                <li id="weather-description">
                     Sunny
                 </li>
             </ul>
@@ -72,27 +74,27 @@
           <hr class="hr-bar" />
     <div class="other-days">
             <div class="row">
-              <div class="col">Tomorrow</div>
-              <div class="col">Sun</div>
-              <div class="col">Mon</div>
-              <div class="col">Tue</div>
-              <div class="col">Wed</div>
+              <div class="col" id="day-1">Tomorrow</div>
+              <div class="col" id="day-2">Sun</div>
+              <div class="col" id="day-3">Mon</div>
+              <div class="col" id="day-4">Tue</div>
+              <div class="col" id="day-5">Wed</div>
             </div>
             <div class="row">
               <div class="col other-days">
-                <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" />
+                <img id="icon-1" src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" />
               </div>
               <div class="col other-days">
-                <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" />
+                <img id="icon-2" src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" />
               </div>
               <div class="col other-days">
-                <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" />
+                <img id="icon-3" src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" />
               </div>
               <div class="col other-days">
-                <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" />
+                <img id="icon-4" src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" />
               </div>
               <div class="col other-days">
-                <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" />
+                <img id="icon-5" src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" />
               </div>
             </div>
             <div class="row">
