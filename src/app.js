@@ -19,7 +19,7 @@ function formatDate(timestamp) {
     "Saturday",
   ];
   let day = days[date.getDay()];
-  return `${day} ${hours}:${minutes}`;
+  return `${day}, ${hours}:${minutes}`;
 }
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
@@ -53,7 +53,7 @@ function searchCity(city) {
 
 function handleSubmit(event) {
   event.preventDefault();
-  let city = document.querySelector("#city-form").value;
+  let city = document.querySelector("#city-input").value;
   searchCity(city);
 }
 
@@ -73,14 +73,14 @@ let dateElement = document.querySelector("#date");
 let currentTime = new Date();
 dateElement.innerHTML = formatDate(currentTime);
 
-let searchForm = document.querySelector("#city-form");
+let searchForm = document.querySelector("#city-input");
 searchForm.addEventListener("submit", handleSubmit);
 
-let fahrenheitButton = document.querySelector("#fahrenheit-button");
-fahrenheitButton.addEventListener("click", celsiusToFahrenheit);
+//let fahrenheitButton = document.querySelector("#fahrenheit-button");
+//fahrenheitButton.addEventListener("click", celsiusToFahrenheit);
 
-let celsiusButton = document.querySelector("#celsius-button");
-celsiusButton.addEventListener("click", fahrenheitToCelsius);
+//let celsiusButton = document.querySelector("#celsius-button");
+//celsiusButton.addEventListener("click", fahrenheitToCelsius);
 
 let currentLocationButton = document.querySelector("#current-location");
 currentLocationButton.addEventListener("click", getCurrentLocation);
