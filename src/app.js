@@ -41,7 +41,7 @@ function showWeatherCondition(response) {
   document.querySelector("#humidity").innerHTML =
     response.data.temperature.humidity;
   document.querySelector("#wind").innerHTML = Math.round(
-    response.data.temperature.wind.speed
+    response.data.wind.speed
   );
 }
 
