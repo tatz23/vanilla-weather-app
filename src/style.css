@@ -64,7 +64,11 @@ ul {
   text-align: right;
   margin-right: 40px;
   padding: 0px;
-  font-size: smaller;
+  font-size: 14px;
+}
+
+#weather-description {
+  text-transform: capitalize;
 }
 .hr-bar {
   /*border: 2px solid #08a9f3;
