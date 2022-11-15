@@ -42,9 +42,12 @@ function showWeatherCondition(response) {
     response.data.temperature.humidity;
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
+<<<<<<< HEAD
   );
   document.querySelector(".feels-like").innerHTML = Math.round(
     response.data.temperature.feels_like
+=======
+>>>>>>> 917b9fe70a483afb88ed955cdaade57b04fee64d
   );
 }
 
