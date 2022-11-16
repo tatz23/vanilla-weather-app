@@ -33,19 +33,20 @@ function formatDay(timestamp) {
 //let apiUrl = `https://api.shecodes.io/weather/v1/current?query={city}&key=${apiKey}&units=metric`;
 
 function showWeatherCondition(response) {
-
   document.querySelector("#city").innerHTML = response.data.city;
-  let currentTemperature= document.querySelector("#current-temperature");
+  let currentTemperature = document.querySelector("#current-temperature");
   let weatherDescription = document.querySelector("#weather-description");
-  let humidityElement= document.querySelector("#humidity");
-  let windElement= document.querySelector("#wind");
-  let feelsLike= document.querySelector(".feels-like");
+  let humidityElement = document.querySelector("#humidity");
+  let windElement = document.querySelector("#wind");
+  let feelsLike = document.querySelector(".feels-like");
   let weatherIcon = document.querySelector("#icon");
   let iconImage = response.data.condition.icon_url;
 
-  currentTemperature.innerHTML =Math.round(response.data.temperature.current);
+  celsiusTemperature = response.data.temperature.current;
+
+  currentTemperature.innerHTML = Math.round(response.data.temperature.current);
   weatherDescription.innerHTML = response.data.condition.description;
-  humidityElement.innerHTML =response.data.temperature.humidity;
+  humidityElement.innerHTML = response.data.temperature.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
   feelsLike.innerHTML = Math.round(response.data.temperature.feels_like);
   weatherIcon.setAttribute("src", iconImage);
@@ -53,14 +54,14 @@ function showWeatherCondition(response) {
 
 function searchCity(city) {
   let apiKey = "2afbc670a6b48bo2065e3872ftab04ec";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query={city}&key=${apiKey}&units=metric`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showWeatherCondition);
 }
 
 function handleSubmit(event) {
   event.preventDefault();
-  let city = document.querySelector("#city-form").value;
-  searchCity(city);
+  let cityInputElement = document.querySelector("#city-input");
+  searchCity(cityInputElement.value);
 }
 
 function searchLocation(position) {
@@ -77,8 +78,8 @@ function getCurrentLocation(event) {
 
 function showCelsius(event) {
   event.preventDefault();
-let celsiusElement=document.querySelector("#current-temperature");
-celsiusElement.innerHTML=Math.round(repsonse.data.temperature.main)
+  let celsiusElement = document.querySelector("#current-temperature");
+  celsiusElement.innerHTML = Math.round(repsonse.data.temperature.main);
 }
 
 //function showFahrenheit (event){
@@ -92,7 +93,7 @@ let dateElement = document.querySelector("#date");
 let currentTime = new Date();
 dateElement.innerHTML = formatDate(currentTime);
 
-let searchForm = document.querySelector("#city-form");
+let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
 
 //let fahrenheitButton = document.querySelector("#fahrenheit-button");
