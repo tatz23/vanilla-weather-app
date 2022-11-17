@@ -38,18 +38,20 @@ function showWeatherCondition(response) {
   let weatherDescription = document.querySelector("#weather-description");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
-  let feelsLike = document.querySelector(".feels-like");
+  let feelsLike = document.querySelector("#feels-like");
   let weatherIcon = document.querySelector("#icon");
   let iconImage = response.data.condition.icon_url;
+  let unitElement = document.querySelector(".units");
 
   celsiusTemperature = response.data.temperature.current;
 
-  currentTemperature.innerHTML = Math.round(response.data.temperature.current);
+  currentTemperature.innerHTML = Math.round(celsiusTemperature);
   weatherDescription.innerHTML = response.data.condition.description;
   humidityElement.innerHTML = response.data.temperature.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
   feelsLike.innerHTML = Math.round(response.data.temperature.feels_like);
   weatherIcon.setAttribute("src", iconImage);
+  unitElement.innerHTML = `ºC`;
 }
 
 function searchCity(city) {
@@ -79,15 +81,22 @@ function getCurrentLocation(event) {
 function showCelsius(event) {
   event.preventDefault();
   let celsiusElement = document.querySelector("#current-temperature");
-  celsiusElement.innerHTML = Math.round(repsonse.data.temperature.main);
+  let unitElement = document.querySelector(".units");
+  celsiusElement.innerHTML = Math.round(celsiusTemperature);
+  unitElement.innerHTML = `ºC`;
 }
 
-//function showFahrenheit (event){
-//  event.preventDefault();
-// let fahrenheitElement = (response.data.temperature.main)*4
-// .5 + 32;
-//
-//}
+function showFahrenheit(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#current-temperature");
+  let fahrenheitElement = celsiusTemperature * 1.8 + 32;
+  let unitElement = document.querySelector(".units");
+
+  temperatureElement.innerHTML = Math.round(fahrenheitElement);
+  unitElement.innerHTML = `ºF`;
+}
+
+let celsiusTemperature = null;
 
 let dateElement = document.querySelector("#date");
 let currentTime = new Date();
@@ -96,13 +105,13 @@ dateElement.innerHTML = formatDate(currentTime);
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
 
-//let fahrenheitButton = document.querySelector("#fahrenheit-button");
-//fahrenheitButton.addEventListener("click", celsiusToFahrenheit);
-
-//let celsiusButton = document.querySelector("#celsius-button");
-//celsiusButton.addEventListener("click", fahrenheitToCelsius);
-
 let currentLocationButton = document.querySelector("#current-location");
 currentLocationButton.addEventListener("click", getCurrentLocation);
+
+let celsiusButton = document.querySelector("#celsius-button");
+celsiusButton.addEventListener("click", showCelsius);
+
+let fahrenheitButton = document.querySelector("#fahrenheit-button");
+fahrenheitButton.addEventListener("click", showFahrenheit);
 
 searchCity("Porto");
