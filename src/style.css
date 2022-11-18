@@ -71,24 +71,30 @@ ul {
   text-transform: capitalize;
 }
 .hr-bar {
-  /*border: 2px solid #08a9f3;
-  border-radius: 5px;*/
   margin: 5px;
 }
 div .data-weather {
   text-align: center;
   font-size: 16px;
 }
-.other-days {
-  color: #052f42;
+.weaher-forecast {
   font-weight: bold;
   text-align: center;
 }
-.min-other-days {
+
+.weather-forecast-date {
+color: #052f42;
+}
+
+.weather-forecast-temperatures{
+  font-size: 14px;
+}
+
+.weather-forecast-temperature-min {
   color: blue;
   font-weight: bold;
 }
-.max-other-days {
+.weather-forecast-temperature-max {
   color: red;
   font-weight: bold;
 }
