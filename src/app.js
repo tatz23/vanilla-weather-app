@@ -126,16 +126,6 @@ function showCelsius(event) {
   unitElement.innerHTML = `ºC`;
 }
 
-function showFahrenheit(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#current-temperature");
-  let fahrenheitElement = celsiusTemperature * 1.8 + 32;
-  let unitElement = document.querySelector(".units");
-
-  temperatureElement.innerHTML = Math.round(fahrenheitElement);
-  unitElement.innerHTML = `ºF`;
-}
-
 let celsiusTemperature = null;
 
 let dateElement = document.querySelector("#date");
@@ -148,13 +138,4 @@ searchForm.addEventListener("submit", handleSubmit);
 let currentLocationButton = document.querySelector("#current-location");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
-let celsiusButton = document.querySelector("#celsius-button");
-celsiusButton.addEventListener("click", showCelsius);
-
-let fahrenheitButton = document.querySelector("#fahrenheit-button");
-fahrenheitButton.addEventListener("click", showFahrenheit);
-
 searchCity("Porto");
-
-//let apiKey = "2afbc670a6b48bo2065e3872ftab04ec";
-//let apiUrl = `https://api.shecodes.io/weather/v1/current?query={city}&key=${apiKey}&units=metric`;
