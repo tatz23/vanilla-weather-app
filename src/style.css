@@ -90,11 +90,11 @@ color: #052f42;
   font-size: 14px;
 }
 
-.weather-forecast-temperature-min {
+.weather-forecast-temperature-minimum {
   color: blue;
   font-weight: bold;
 }
-.weather-forecast-temperature-max {
+.weather-forecast-temperature-maximum {
   color: red;
   font-weight: bold;
 }

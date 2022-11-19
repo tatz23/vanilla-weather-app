@@ -41,13 +41,20 @@ function displayForecast(response) {
       forecastHTML =
         forecastHTML +
         `<div class="col-2">
-                <div class="weather-forecast-date">${formatDay(forecastDay.time)} </div>
+                <div class="weather-forecast-date">${formatDay(
+                  forecastDay.time
+                )} </div>
                 <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
-                    forecastDay.condition.icon}.png"
-                  alt="" width="42"/>
+                  forecastDay.condition.icon
+                }.png"
+                  alt="" width="64"/>
                 <div class="weather-forecast-temperatures">
-                <span class="weather-forecast-temperature-maximum">${Math.round(forecastDay.temperature.maximum)}°</span>
-                <span class="weather-forecast-temperature-minimum">${Math.round(forecastDay.temperature.minimum)}°</span>
+                <span class="weather-forecast-temperature-maximum">${Math.round(
+                  forecastDay.temperature.maximum
+                )}°C</span>
+                <span class="weather-forecast-temperature-minimum">${Math.round(
+                  forecastDay.temperature.minimum
+                )}°C</span>
               </div>
           
         </div>`;
@@ -58,13 +65,11 @@ function displayForecast(response) {
   forecastElement.innerHTML = forecastHTML;
 }
 
-function getForecast (coordinates) {
-  let apiKey ="2afbc670a6b48bo2065e3872ftab04ec";
+function getForecast(coordinates) {
+  let apiKey = "2afbc670a6b48bo2065e3872ftab04ec";
   let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
-
-
 
 function showWeatherCondition(response) {
   document.querySelector("#city").innerHTML = response.data.city;
@@ -86,6 +91,7 @@ function showWeatherCondition(response) {
   feelsLike.innerHTML = Math.round(response.data.temperature.feels_like);
   weatherIcon.setAttribute("src", iconImage);
   unitElement.innerHTML = `ºC`;
+  getForecast(response.data.coordinates);
 }
 
 function searchCity(city) {
