@@ -16,6 +16,7 @@
   box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.2);
   padding: 0px 5px 0px 5px;
   margin-left: -6px;
+  font-size: 18px;
 }
 
 .current-location:hover {
@@ -73,10 +74,10 @@ div .data-weather {
 }
 
 .weather-forecast-date {
-color: #052f42;
+  color: #052f42;
 }
 
-.weather-forecast-temperatures{
+.weather-forecast-temperatures {
   font-size: 14px;
 }
 
