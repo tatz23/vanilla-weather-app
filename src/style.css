@@ -7,8 +7,6 @@
   font-family: "Poppins", sans-serif;
 }
 
-.celsius-selector,
-.fahrenheit-selector,
 .current-location {
   margin: 5px auto;
   display: block;
@@ -16,19 +14,11 @@
   border: 1px solid #052f42;
   border-radius: 30px;
   box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.2);
+  padding: 0px 5px 0px 5px;
+  margin-left: -6px;
 }
 
 .current-location:hover {
-  background: #08a9f3;
-  color: white;
-  cursor: pointer;
-}
-.celsius-selector:hover {
-  background: #08a9f3;
-  color: white;
-  cursor: pointer;
-}
-.fahrenheit-selector:hover {
   background: #08a9f3;
   color: white;
   cursor: pointer;
